@@ -9,8 +9,9 @@ class InventoryItemSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = InventoryItem
-        fields = ('id', 'book', 'physical', 'purchased_on',)
+        fields = ('id', 'book', 'inventory_list', 'physical', 'purchased_on',)
         extra_kwargs = {
+            'inventory_list': {'required': False, 'write_only': True},
             'purchased_on': {'required': False},
         }
 
