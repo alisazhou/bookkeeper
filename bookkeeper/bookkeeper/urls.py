@@ -3,10 +3,12 @@ from django.urls import include, path
 from rest_framework.routers import SimpleRouter
 
 from books.views import BookViewSet
+from profiles.views import ProfileViewSet
 
 
 router = SimpleRouter()
 router.register('books', BookViewSet)
+router.register('profiles', ProfileViewSet)
 
 
 urlpatterns = [
