@@ -1,3 +1,6 @@
+collected_static
 db.sqlite3
 .idea
+node_modules
 __pycache__
+static
