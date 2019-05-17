@@ -13,7 +13,7 @@ class ReadingList(models.Model):
 
 class ReadingItem(models.Model):
     book = models.ForeignKey(Book, on_delete=models.CASCADE)
-    reading_list = models.ForeignKey(ReadingList, on_delete=models.CASCADE)
+    reading_list = models.ForeignKey(ReadingList, on_delete=models.CASCADE, related_name='books')
     added_on = models.DateTimeField(default=timezone.now)
     finished_on = models.DateTimeField(blank=True, null=True)
     notes = models.TextField(blank=True)

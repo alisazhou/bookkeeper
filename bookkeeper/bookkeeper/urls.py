@@ -5,12 +5,14 @@ from rest_framework.routers import SimpleRouter
 from books.views import BookViewSet
 from inventories.views import InventoryListViewSet
 from profiles.views import ProfileViewSet
+from readings.views import ReadingListViewSet
 
 
 router = SimpleRouter()
 router.register('books', BookViewSet)
 router.register('inventories', InventoryListViewSet)
 router.register('profiles', ProfileViewSet)
+router.register('readings', ReadingListViewSet)
 
 
 urlpatterns = [
