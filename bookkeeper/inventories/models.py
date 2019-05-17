@@ -11,6 +11,7 @@ class InventoryList(models.Model):
 
 class InventoryItem(models.Model):
     book = models.ForeignKey(Book, on_delete=models.CASCADE)
-    inventory_list = models.ForeignKey(InventoryList, on_delete=models.CASCADE)
+    inventory_list = models.ForeignKey(
+        InventoryList, on_delete=models.CASCADE, related_name='books')
     physical = models.BooleanField(default=False)
     purchased_on = models.DateField(blank=True, null=True)
