@@ -2,28 +2,34 @@ import React, { useEffect } from 'react';
 
 import { fetchBooks } from '../contexts/bookActions';
 import { useBookContext } from '../contexts/bookContext';
+import { fetchReadingLists } from '../contexts/readingActions';
+import { useReadingContext } from '../contexts/readingContext';
 
 import Layout from '../layout/Layout';
 
 
 const Dashboard = () => {
-    const [{ items, status }, dispatch] = useBookContext();
+    const [bookState, bookDispatch] = useBookContext();
+    const [readingState, readingDispatch] = useReadingContext();
 
     useEffect(() => {
-        if (!status) {
-            fetchBooks(dispatch);
+        if (!bookState.status) {
+            fetchBooks(bookDispatch);
+        }
+        if (!readingState.status) {
+            fetchReadingLists(readingDispatch);
         }
     });
 
-    if (status === 'loading') {
+    if (bookState.status === 'loading') {
         return <div>loading...</div>;
     }
 
-    if (status === 'failure') {
+    if (bookState.status === 'failure') {
         return <div>ERROR</div>;
     }
 
-    return status === 'success' && <div>{items[0].title}</div>;
+    return readingState.status === 'success' && <div>{readingState.items[0].name}</div>;
 }
 
 
