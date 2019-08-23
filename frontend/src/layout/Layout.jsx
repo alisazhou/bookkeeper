@@ -1,12 +1,13 @@
 import React from 'react';
 
 import NavigationHeader from './NavigationHeader';
+import ReadingListsDashboard from '../readingLists/ReadingListsDashboard'
 
 
 const Layout = () => (
     <div>
         <NavigationHeader />
-        <div>the rest of the fucking owl</div>
+        <ReadingListsDashboard />
     </div>
 );
 

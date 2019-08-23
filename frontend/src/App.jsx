@@ -2,13 +2,13 @@ import React from 'react';
 
 import { BookProvider } from './contexts/bookContext';
 
-import ReadingListsDashboard from './readingLists/ReadingListsDashboard';
+import Layout from './layout/Layout';
 
 
 const App = () => {
     return (
         <BookProvider>
-            <ReadingListsDashboard />
+            <Layout />
         </BookProvider>
     );
 };

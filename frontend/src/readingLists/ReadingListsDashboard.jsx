@@ -23,7 +23,7 @@ const Dashboard = () => {
         return <div>ERROR</div>;
     }
 
-    return status === 'success' && <Layout />;
+    return status === 'success' && <div>{items[0].title}</div>;
 }
 
 
