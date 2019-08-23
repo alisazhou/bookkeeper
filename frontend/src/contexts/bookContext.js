@@ -4,14 +4,14 @@ import React, { createContext, useContext, useReducer } from 'react';
 // actions and reducer
 const initialState = {
     items: [],
-    status: 'loading',
-    error: '',
+    status: '',
+    error: null,
 };
 
 const reducer = (state, action) => {
     switch (action.type) {
-        case 'receiveBooks':
-            return { ...state, items: action.items, status: action.status };
+        case 'fetchBooks':
+            return { ...state, items: action.items, status: action.status, error: action.error };
         default:
             return state;
     }

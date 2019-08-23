@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 
+import { fetchBooks } from '../contexts/bookActions';
 import { useBookContext } from '../contexts/bookContext';
 
 
@@ -7,11 +8,8 @@ const Dashboard = () => {
     const [{ items, status }, dispatch] = useBookContext();
 
     useEffect(() => {
-        if (items.length === 0) {
-            fetch('/api/books/')
-                .then(response => response.json())
-                .then(data => dispatch({ type: 'receiveBooks', items: data, status: 'success' }))
-                .catch(err => dispatch({ type: 'receiveBooks', status: 'failure' }))
+        if (!status) {
+            fetchBooks(dispatch);
         }
     });
 
