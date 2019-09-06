@@ -23,11 +23,11 @@ const Dashboard = () => {
         }
     });
 
-    if (bookState.status === 'loading') {
+    if (!uiState || uiState.status === 'loading') {
         return <div>loading...</div>;
     }
 
-    if (bookState.status === 'failure') {
+    if (uiState.status === 'failure') {
         return <div>ERROR</div>;
     }
 
