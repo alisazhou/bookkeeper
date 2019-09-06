@@ -3,19 +3,27 @@ import styled from 'styled-components';
 
 import { searchBook } from '../contexts/uiActions';
 import { useUIContext } from '../contexts/uiContext';
+import XIcon from '../icons/XIcon';
 import { secondaryDark } from '../utils/constants';
 
 
-const StyledInput = styled.input`
-    background-color: transparent;
-    border-color: ${secondaryDark};
-    border-width: 0px 0px 1px 0px;
-    box-sizing: border-box;
-    color: ${secondaryDark};
-    font: inherit;
-    height: 40px;
+const StyledWrapper = styled.div`
+    align-items: center;
+    border-bottom: 1px solid ${secondaryDark};
+    display: flex;
+    justify-content: space-between;
     margin-bottom: 20px;
     width: 100%;
+`;
+
+const StyledInput = styled.input`
+    background-color: transparent;
+    border: none;
+    box-sizing: border-box;
+    color: ${secondaryDark};
+    flex-basis: 95%;
+    font: inherit;
+    height: 40px;
 
     :focus {
         outline: none;
@@ -28,10 +36,17 @@ const SearchBar = () => {
 
     const handleChange = evt => {
         uiDispatch(searchBook(evt.target.value));
-    }
+    };
+
+    const clearText = () => {
+        uiDispatch(searchBook(''));
+    };
 
     return (
-        <StyledInput onChange={handleChange} placeholder="search for book" />
+        <StyledWrapper>
+            <StyledInput onChange={handleChange} placeholder="search for book" value={uiState.searchText} />
+            {uiState.searchText && <XIcon handleClick={clearText} />}
+        </StyledWrapper>
     );
 }
 
