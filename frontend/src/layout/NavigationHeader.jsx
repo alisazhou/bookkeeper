@@ -1,5 +1,4 @@
 import React from 'react';
-
 import styled from 'styled-components';
 
 
@@ -8,7 +7,7 @@ const StyledHeader = styled.div`
     display: flex;
     height: 48px;
     justify-content: space-between;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     width: 100%;
 `;
 
