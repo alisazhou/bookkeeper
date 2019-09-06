@@ -3,6 +3,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import NavigationHeader from './NavigationHeader';
+import SearchBar from './SearchBar';
 import ReadingListsDashboard from '../readingLists/ReadingListsDashboard'
 
 
@@ -15,6 +16,7 @@ const StyledLayout = styled.div`
 const Layout = () => (
     <StyledLayout>
         <NavigationHeader />
+        <SearchBar />
         <ReadingListsDashboard />
     </StyledLayout>
 );
