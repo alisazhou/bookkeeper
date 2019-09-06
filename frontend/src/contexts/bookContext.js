@@ -1,5 +1,7 @@
 import React, { createContext, useContext, useReducer } from 'react';
 
+import { bookActionTypes } from '../utils/constants';
+
 
 // actions and reducer
 const initialState = {
@@ -10,7 +12,7 @@ const initialState = {
 
 const reducer = (state, action) => {
     switch (action.type) {
-        case 'fetchBooks':
+        case bookActionTypes.FETCH:
             return { ...state, items: action.items, status: action.status, error: action.error };
         default:
             return state;

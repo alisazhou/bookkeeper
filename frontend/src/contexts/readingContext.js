@@ -1,5 +1,7 @@
 import React, { createContext, useContext, useReducer } from 'react';
 
+import { readingListActionTypes } from '../utils/constants';
+
 
 // actions and reducer
 const initialState = {
@@ -11,7 +13,7 @@ const initialState = {
 
 const reducer = (state, action) => {
     switch (action.type) {
-        case 'fetchReadingLists':
+        case readingListActionTypes.FETCH:
             return { ...state, items: action.items, status: action.status, error: action.error };
         default:
             return state;

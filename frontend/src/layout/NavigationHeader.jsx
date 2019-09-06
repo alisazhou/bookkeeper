@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import { primaryAccent } from '../utils/constants';
+
 
 const StyledHeader = styled.div`
     align-items: center;
@@ -27,7 +29,7 @@ const MenuIcon = () => (
 
 export default () => (
     <StyledHeader>
-        <StyledHeaderContent>BOOK<span style={{color: "#fcba03"}}>KEEPER</span></StyledHeaderContent>
+        <StyledHeaderContent>BOOK<span style={{ color: primaryAccent }}>KEEPER</span></StyledHeaderContent>
         <MenuIcon />
     </StyledHeader>
 );

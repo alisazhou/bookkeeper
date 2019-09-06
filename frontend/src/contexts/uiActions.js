@@ -1,10 +1,13 @@
+import { uiActionTypes } from '../utils/constants';
+
+
 export const load = status => ({
-    type: 'load',
+    type: uiActionTypes.LOAD,
     status,
 });
 
 
 export const searchBook = text => ({
-    type: 'searchBook',
+    type: uiActionTypes.SEARCH_BOOK,
     text,
 });

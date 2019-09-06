@@ -5,6 +5,7 @@ import { useBookContext } from '../contexts/bookContext';
 import { fetchReadingLists } from '../contexts/readingActions';
 import { useReadingContext } from '../contexts/readingContext';
 import { useUIContext } from '../contexts/uiContext';
+import { statuses } from '../utils/constants';
 
 import Layout from '../layout/Layout';
 
@@ -23,15 +24,15 @@ const Dashboard = () => {
         }
     });
 
-    if (!uiState || uiState.status === 'loading') {
+    if (!uiState || uiState.status === statuses.LOADING) {
         return <div>loading...</div>;
     }
 
-    if (uiState.status === 'failure') {
+    if (uiState.status === statuses.ERROR) {
         return <div>ERROR</div>;
     }
 
-    return readingState.status === 'success' && <div>{readingState.items[0].name}, {uiState.searchText}</div>;
+    return readingState.status === statuses.SUCCESS && <div>{readingState.items[0].name}, {uiState.searchText}</div>;
 }
 
 
