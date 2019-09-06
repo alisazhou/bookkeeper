@@ -6,9 +6,10 @@ import styled from 'styled-components';
 const StyledHeader = styled.div`
     align-items: center;
     display: flex;
+    height: 48px;
     justify-content: space-between;
-    padding: 18px;
-    width: calc(100% - 36px);
+    margin-bottom: 20px;
+    width: 100%;
 `;
 
 const StyledHeaderContent = styled.div`
